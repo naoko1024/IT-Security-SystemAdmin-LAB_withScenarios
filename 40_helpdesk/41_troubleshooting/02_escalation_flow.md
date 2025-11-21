@@ -42,3 +42,31 @@
 	- **L4**: Reports as major incident and decides on public communication / 重大インシデントとして報告・広報判断
 ### References for escalation framework / 他のフレームワーク参考先
 - NIST SP 800-61 Rev. 3, Incident Response Recommendations and Considerations for Cybersecurity Risk Management: A CSF 2.0 Community Profile https://csrc.nist.gov/pubs/sp/800/61/r3/final
+
+---
+## Overall Escalation to Resolution Sample / エスカレーションフロー具体例
+
+- User / ユーザー  
+↓ Report via ticket/chat: "Cannot connect to VPN" / チケット・チャットで報告：「VPN接続できない」  
+- Helpdesk (L1) / ヘルプデスク  
+↓ If unresolved within 30 min / 30分以内に未解決の場合
+- Checks logs → Cause unknown / ログ確認 → 原因不明  
+    IT Admin (L2) / IT運用チーム  
+    ↓ Requires system-level fix / システムレベルの修正が必要
+- Investigates → Authentication server failure identified / 調査 → 認証サーバー障害を特定  
+    Vendor / Specialist (L3) / 外部ベンダー・専門チーム  
+    ↓ If critical / 重大な場合
+- Contact if needed → Issue resolved / 必要に応じて連絡 → 復旧完了  
+    Manager / Exec (L4) / 管理職・経営層
+- Receive incident report → Update FAQ / 障害報告受領 → FAQ更新
+---
+## Notes / 運用メモ
+
+- Define an **escalation matrix** in advance (who makes decisions, when, and to what extent)./ 事前に**エスカレーションマトリックス**（誰が、いつ、どこまで判断するか）を定めておく。
+- Document procedures and decision criteria so that the entire team can use the same process based on incident classification and priority. / インシデント分類および優先度に応じて、同じ手順・判断基準をチーム全体で使えるようドキュメント化しておく。
+- Conduct regular **drills and tabletop exercises** to practice escalation decision-making. / 定期的に**演習・テーブルトップ**で「エスカレーション判断の訓練」を行う。
+- Clearly define **communication channels, authority, and responsibility boundaries (RACI)** after escalation. / エスカレーション後の **コミュニケーションチャネル・権限・責任分界点（RACI）** も明確にしておく。
+- Consider automation and AI, designing a workflow where **simple alerts are handled automatically** while **high-risk cases are escalated for human judgment**. /自動化・AI導入を検討して、「単純アラートは自動で処理、リスクの高いケースは人間判断へ」という流れを設計。
+- Record **when, to whom, and what was requested during escalation　/ 「いつ」「誰に」「何を依頼したか」** のエスカレーションマトリックスを記録する。
+- Set SLA (Service Level Agreement) to visualize response time / SLA（Service Level Agreement）を設定し、対応時間を可視化する
+- After response, update FAQ or internal knowledge base to reduce similar inquiries / 「同様の問い合わせを減らす」ため、対応後はFAQまたは社内ナレッジベースへ反映。
