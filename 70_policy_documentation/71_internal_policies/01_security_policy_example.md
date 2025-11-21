@@ -1,3 +1,5 @@
+# 01_security_policy_example.md
+
 ## Objective / 目的
 - Establish a foundational security policy to support the safe adoption of new cloud services and ensure alignment with international standards such as ISMS.
 - Provide a sample document for learning purposes.
