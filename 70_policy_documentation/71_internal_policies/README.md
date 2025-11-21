@@ -1,5 +1,5 @@
 # README.md
-## Objectives
+## Overview & Objectives
 - In this directory, a set of internal security policies is created as a simulated example based on frameworks such as ISMS.
 - Demonstrates that I understand what type of internal rules and procedures potentially used in enterprise settings, related to the operation and management of corporate information systems. 
 - The scenario at each policy helps to apply the knowledge directly at work independently upon practical scenario.
