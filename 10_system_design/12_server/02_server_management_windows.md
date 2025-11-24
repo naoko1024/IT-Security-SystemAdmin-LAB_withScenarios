@@ -8,7 +8,9 @@
 - Windows Server 環境の構築、および運用管理、アカウント管理、グループポリシー設定、サービス監視など、運用管理に関する基本手順のサンプルを示します。
 - WindowsシステムのHands-on演習は、自身のマシンではなく、TryHackMeの環境構築済みのWindowsマシンを使用しました。
 - このタスクに関連するTryHackMeのroomは以下です。(一部無料)
+
 ---
+
 ## References
 
 - TryHackMe
@@ -16,9 +18,9 @@
 	- Windows Fundamentals 3 https://tryhackme.com/room/windowsfundamentals3xzx
 	- Windows Forensics 2 https://tryhackme.com/room/windowsforensics2
 	- Active Directory Basics https://tryhackme.com/room/winadbasics
-![[Screenshot200143.png]]
 
 ---
+
 ## Scenario / シナリオ
 
 - The IT department is consolidating authentication and file-sharing systems, which have been inconsistently managed across departments.  
@@ -27,7 +29,8 @@
 - あなたはIT部門の担当者として、Windows Serverベースのドメイン環境を構築し、アカウント管理の統一、グループポリシーの適用、セキュリティ監視の強化を行うことになりました。
 
 ---
-## 3. Environment Overview / 環境概要
+
+## Environment Overview / 環境概要
 
 |項目 / Item|内容 / Details|
 |---|---|
@@ -38,7 +41,7 @@
 
 ---
 
-## 4. Setup and Configuration / 構築と設定手順
+## Steps / 手順
 
 ### Step 1. Initial Setup / 初期設定
 
@@ -93,7 +96,9 @@ Add-ADGroupMember -Identity "IT_Admins" -Members "Yamada Taro"
     　- Minimum password length: 15  
     　- Password expiration: 90 days  
     　- Lockout after 5 failed attempts
-    　- You can also check -> How Do I Create a Good Password? by NIST https://www.nist.gov/cybersecurity/how-do-i-create-good-password
+   
+- You can also check ->
+	- How Do I Create a Good Password? by NIST https://www.nist.gov/cybersecurity/how-do-i-create-good-password
     
 - To restrict RDP access (example PowerShell):
 ```powershell
@@ -117,7 +122,7 @@ schtasks /create /tn "DailyBackup" /tr "C:\scripts\daily_backup.ps1" /sc daily /
 ```
 ---
 
-## 5. Verification / 動作確認
+## Verification / 動作確認
 
 - Domain login test from a client PC.  
     　クライアントPCからのドメインログインテスト。
