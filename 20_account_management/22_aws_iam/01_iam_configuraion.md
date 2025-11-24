@@ -9,14 +9,8 @@
 
 ##### Contents / 学習内容
 
-- Exploring pre-created IAM Users and Groups
-- Inspecting IAM policies as applied to the pre-created groups
-- Following a real-world scenario, adding users to groups with specific capabilities enabled
-- Locating and using the IAM sign-in URL
-- Experimenting with the effects of policies on service access
-
-- 事前に作成された IAM ユーザーと IAM グループを確認する
-- 事前に作成されたグループに適用された IAM ポリシーを確認する
-- 実際のシナリオに沿って、特定の機能が有効になっているグループにユーザーを追加する
-- IAM のサインイン URL の場所を確認して、使用する
-- サービスへのアクセスに対するポリシーの効果を試す
+- Exploring pre-created IAM Users and Groups / 事前に作成された IAM ユーザーと IAM グループを確認する
+- Inspecting IAM policies as applied to the pre-created groups / 事前に作成されたグループに適用された IAM ポリシーを確認する
+- Following a real-world scenario, adding users to groups with specific capabilities enabled / 実際のシナリオに沿って、特定の機能が有効になっているグループにユーザーを追加する
+- Locating and using the IAM sign-in URL /  IAM のサインイン URL の場所を確認して、使用する
+- Experimenting with the effects of policies on service access / サービスへのアクセスに対するポリシーの効果を試す
