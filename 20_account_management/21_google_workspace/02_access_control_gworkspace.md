@@ -1,5 +1,5 @@
 
-# access_control_gworkspace.md 
+# 02_access_control_gworkspace.md 
 ## Overview / 概要
 
 - Configure initial access permissions and security settings to ensure secure onboarding.
