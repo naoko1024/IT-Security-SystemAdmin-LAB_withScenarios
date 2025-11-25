@@ -16,12 +16,26 @@
 - Use this directory as a self-study lab or as reference material for internal documentation. Please make sure to verify that the code and referenced materials are up to date before use.  
   自習用ラボへの活用、そして社内文書作成の参考資料になることを目指しました。しかし、掲載されている**コードやリンク先の資料については、最新の内容であるか必ずご確認ください。**
 
-## Folder Structure
-- If your time is limited, only viewing the folders marked with ★ will give you a good understanding of my skill set.  
-  お時間が限られている場合は、**★★★マークの付いた4つのフォルダのみ**ご確認いただければスキル概要をご理解いただけます。
+--- 
+
+## Efficient Navigation Tip / このラボの効率的な読み方
+- If your time is limited, you can only view 4 folders marked with ★★★ out of directory structure below. It will give you a good understanding of my skill set.   
+  お時間が限られている場合は、下のディレクトリ構造ツリーから**★★★マークの付いた4つのフォルダのみ**ご確認いただければスキル概要をご理解いただけます。
+
+---
+
+## Directory Structure / ディレクトリ構造            
 
 ```text
-IT-Security-SystemAdmin-LAB_withScenarios  
+Highlighted Folders Path / 注目フォルダリスト ★★★
+1. ネットワーク設計・構築手順       10_system_design/11_network/ 01_network_setup_lab.md ★★★  
+2. ユーザー作成手順                20_account_management/21_google_workspace/01_create_user_gworkspace.md ★★★
+3. ヘルプデスク(NW/ログイン/プリンタ)  40_helpdesk/41_troubleshooting/01_troubleshooting_examples.md ★★★
+4. アクセス権限ガイドライン       70_policy_documentation/71_internal_policies/02_access_control_guidelines.md ★★★
+```
+
+```text  
+IT-Security-SystemAdmin-LAB_withScenarios
 │  
 10_system_design/                       # ネットワーク構成・設計・演習
 │   │
