@@ -1,4 +1,4 @@
-# create_user_gworkspace.md
+# 01_create_user_gworkspace.md
 ## Objective / 目的
 - To create new user accounts in Google Workspace following standard procedures.  
 	標準手順に従ってGoogle Workspaceで新規ユーザーアカウントを作成する。
@@ -37,7 +37,8 @@
 - After creating the user, assign them to the appropriate OU according to department or role.　/ ユーザー作成後、部署や役職に応じて適切なOUに割り当てます。 
 - Click the name of user > Organizational Unit > select the target OU.  
     ユーザーをクリック → 「組織単位」 → 対象OUを選択。
-
+  (TEST account / デモ用画面)
+![screenshot](../../images/21_gworkspace_OU_selection.png)
 
 - You can also check -> 21_google_workspace/access_control_gworkspace.md, Step 3: Apply OU-specific Policies / OUごとのポリシー適用
 
