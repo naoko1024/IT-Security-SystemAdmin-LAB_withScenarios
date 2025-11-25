@@ -1,4 +1,4 @@
-# mfa_enforcement_example.md
+# 04_mfa_enforcement_example.md
 ## Objective / 目的  
 - Demonstrate how to enforce MFA for Google Workspace users at an organizational level, including exceptions management, user notification, and audit logging.  
 - Google Workspaceユーザーに対するMFAの組織単位での強制適用、例外管理、ユーザー通知、監査ログ取得までを含めた運用例を示しています。
