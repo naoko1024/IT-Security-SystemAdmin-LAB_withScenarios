@@ -18,6 +18,8 @@
 	- Windows Fundamentals 3 https://tryhackme.com/room/windowsfundamentals3xzx
 	- Windows Forensics 2 https://tryhackme.com/room/windowsforensics2
 	- Active Directory Basics https://tryhackme.com/room/winadbasics
+ 
+![screenshot](../../images/12_thm_windows_GroupPolicyManagement_window.png)
 
 ---
 
