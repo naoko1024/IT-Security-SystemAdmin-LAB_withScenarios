@@ -31,14 +31,18 @@
     - Primary Email / メールアドレス
 - Initial password is generated automatically (Users can change at first login).  
     初期パスワードは自動で設定されています（ユーザーは初回ログイン時に変更できます）
+  
+![screenshot](../../images/21_create_users.png)<br>
+(TEST account / テスト用アカウント)　　
+  
 - Sent log-in instructions to users at their reachable email addresses. / ユーザー任意のメールアドレスを入力すると、ログイン手順がメ記載されたメールが送ることができます。
 ### Step 4: Assign Organizational Unit (OU) / 組織単位への割当
 
 - After creating the user, assign them to the appropriate OU according to department or role.　/ ユーザー作成後、部署や役職に応じて適切なOUに割り当てます。 
 - Click the name of user > Organizational Unit > select the target OU.  
     ユーザーをクリック → 「組織単位」 → 対象OUを選択。
-  (TEST account / デモ用画面)
-![screenshot](../../images/21_gworkspace_OU_selection.png)
+![screenshot](../../images/21_gworkspace_OU_selection.png)<br>
+  (TEST account / テスト用アカウント)
 
 - You can also check -> 21_google_workspace/access_control_gworkspace.md, Step 3: Apply OU-specific Policies / OUごとのポリシー適用
 
