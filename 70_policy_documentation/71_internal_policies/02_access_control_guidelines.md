@@ -4,9 +4,9 @@
 - ISMS A.9 に基づき、新規 SaaS 導入時のアクセス制御およびアカウント管理に関する実務的なルールを定め、情報資産の保護と業務効率の維持、ならびに IT・運用担当者が参照できる具体的な手順を明確化することを目的とする。
 
 ## Scenario / シナリオ
-- To introducing a new SaaS (e.g., Notion, Google Workspace, AWS), IT team is instructed to design access control and account management rules.  
+- To introducing a new SaaS (e.g., Notion, Google Workspace, AWS), IT team is going to design access control and account management rules.  
 - This guideline is prepared with reference to ISMS A.9 (Access Control).
-- 新規SaaSを導入する際、アクセス権限設計・アカウント管理ルールを策定するよう指示されました。  
+- 新規SaaSを導入する際、アクセス権限設計・アカウント管理ルールを策定することになりました。  
 - ISMS A.9（Access Control）を参考に、運用部門向けのガイドラインを作成します。
 ---
 ## ISMS A.9（Access Control）Alignment Points／ISMS A.9（アクセス制御）との対応ポイント
