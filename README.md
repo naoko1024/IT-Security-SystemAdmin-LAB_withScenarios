@@ -18,7 +18,7 @@
 
 ## Folder Structure
 - If your time is limited, only viewing the folders marked with ★ will give you a good understanding of my skill set.  
-  お時間が限られている場合は、**★マークの付いた4つのフォルダのみ**ご確認いただければスキル概要をご理解いただけます。
+  お時間が限られている場合は、**★★★マークの付いた4つのフォルダのみ**ご確認いただければスキル概要をご理解いただけます。
 
 ```text
 IT-Security-SystemAdmin-LAB_withScenarios  
