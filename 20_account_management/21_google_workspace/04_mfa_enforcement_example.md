@@ -46,6 +46,9 @@
     - Recommended: Security key (FIDO2), Software token / 推奨：セキュリティキー（FIDO2）、ソフトウェアトークン
     - Practical: Combine security key + Authenticator for stronger protection / 実務ではセキュリティキー＋Authenticatorの組み合わせが強力
 
+- Authentication settings window (TEST account)/ 認証設定画面(デモ用)
+![screenshot](../../images/21_gworkspace_authentication_window.png)
+
 ---
 
 ## Step 3: Exception User Management / 例外ユーザー管理
