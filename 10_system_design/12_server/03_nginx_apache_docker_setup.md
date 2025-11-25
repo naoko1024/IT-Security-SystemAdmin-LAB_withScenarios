@@ -74,7 +74,7 @@ docker run -d --name test-nginx -p 8080:80 nginx:latest
 docker ps -a
 curl http://localhost:8080
 ```
-
+![screenshot](../../images/12_create_nignx_docker.png)
 
 - Create a dockerfile as needed to install curl/wget/vim as needed. / 必要に応じてcurl/wget/vim を Nginx コンテナ内に追加するDockerfile を作る
 
@@ -100,7 +100,7 @@ docker run -d --name test-apache -p 8081:80 httpd:latest
 ddocker ps
 curl http://localhost:8081
 ```
-
+![screenshot](../../images/12_create_apache_docker.png)
 
 ---
 ## Step 5: Service Switching (Optional) / サービス切り替え（任意）
