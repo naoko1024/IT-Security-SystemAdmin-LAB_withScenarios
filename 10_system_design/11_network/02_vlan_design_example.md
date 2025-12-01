@@ -3,29 +3,39 @@
 ## Objective / 目的
 - Understand the structure and concept of VLANs
 - Design network segmentation for each department
-- Simulate VLAN configurations in a virtual lab environment
-- VLANの基本構造と概念を理解する
-- 部署ごとのネットワーク分離を設計する
-- 仮想環境（VirtualBoxなど）でVLANをシミュレーションする
-- この構成により、Kali上で複数VLANを再現し、Dockerコンテナを使って部門別ネットワークの通信・隔離・ルーティング演習が可能です。  
-- 母艦PCや外部ネットワークには影響せず、安全に演習できます。
+- This setup allows you to simulate multiple VLANs on Kali and use Docker containers to practice department-based network communication, isolation, and routing.
+- VLANの基本構造と概念を理解する。
+- 部署ごとのネットワーク分離を設計する。
+- この構成により、Kali上で複数VLANを再現し、Dockerコンテナを使って部門別ネットワークの通信・隔離・ルーティング演習が可能です。
+
+---
 ## Scenario / シナリオ
-- IT team is notified that there are the Sales, Development, and Admin departments, and each have different communication requirements. 
-- To ensure secure and efficient connectivity, you need to design and configure VLANs.
-- 営業部門・開発部門・管理部門はそれぞれ異なる通信要件を持っているようです。
-- セキュリティ分離と効率的な通信のために、VLAN を設計・設定します。
+- There are the Sales, Development, and Admin departments, and each have different communication requirements. 
+- To ensure security isolation and efficient communication, IT team designs and configures VLANs so that each PC can communicate only within the VLAN of its own department.
+- 営業部門・開発部門・管理部門は、それぞれ異なる通信要件を持っています。
+- セキュリティ分離と効率的な通信のために、VLAN を設計・設定することになりました。
+- 各PCは自分が所属する部門のVLAN内のみで通信を可能とします。
+
+---
 ## Lab Steps / 演習ステップ
-- Create dummy interfaces on Kali, and attach Docker containers to isolated networks for VLAN-like simulation.
-- Kali上で dummy インターフェースを作り、Dockerコンテナを隔離ネットワークに接続して VLAN 的な演習を行います。
+- Create dummy interfaces on Kali, and attach Docker containers to create isolated networks for VLAN-like simulation.
+- Verify that devices cannot access any other VLANs than their own at the connectivity test.
+- Kali上で 仮想dummy インターフェースを作り、Dockerコンテナを接続しVLANとして隔離ネットワークを作成します。
+- 最後に通信テストを行い、他のVLANにはアクセスできないことを確認します。
+
+---
+### Environment / 環境
+- OS : Kali Linux
+- Container : Docker
 
 ---
 ### VLAN Design / VLAN設計
 
-| 部署 / Department  | VLAN ID | IP Range      | Subnet Mask   | 目的 / Purpose                      |
-| ---------------- | ------- | ------------- | ------------- | --------------------------------- |
-| Sales (営業)       | 30      | 192.168.110.0 | 255.255.255.0 | External communications / 社外通信メイン |
-| Development (開発) | 40      | 192.168.120.0 | 255.255.255.0 | Development use / 開発環境・Git等       |
-| Admin (管理)       | 50      | 192.168.130.0 | 255.255.255.0 | Internal admin systems / 経理・社内管理  |
+| 部署 / Department  | VLAN ID | IP Range      | Subnet Mask   |
+| ---------------- | ------- | ------------- | ------------- |
+| Sales (営業)       | 30      | 192.168.110.0 | 255.255.255.0 |
+| Development (開発) | 40      | 192.168.120.0 | 255.255.255.0 |
+| Admin (管理)       | 50      | 192.168.130.0 | 255.255.255.0 |
 
 ---
 ### Network Architecture / ネットワーク構成
@@ -37,17 +47,17 @@
 Kali Linux (Router)
 │
 ├── dummy30 (192.168.110.1/24) 
-│       └── Docker bridge: vlan30-net
+│       └── Docker bridge: vlan30-net (192.168.110.254/24)
 │               ├── ClientC (192.168.110.2)
 │               └── ClientD (192.168.110.3)
 │
 ├── dummy40 (192.168.120.1/24) 
-│       └── Docker bridge: vlan40-net
+│       └── Docker bridge: vlan40-net (192.168.120.254/24)
 │               ├── ClientE (192.168.120.2)
 │               └── ClientF (192.168.120.3)
 │
 └── dummy50 (192.168.130.1/24)
-        └── Docker bridge: vlan50-net
+        └── Docker bridge: vlan50-net (192.168.130.254/24)
                 ├── ClientG (192.168.130.2)
                 └── ClientH (192.168.130.3)
 		
@@ -82,7 +92,7 @@ sudo ip link delete dummy30
 ip addr show | grep dummy
 ```
 
-
+---
 
 ### 2. Create Docker Bridge Networks / Dockerブリッジネットワーク作成
 
@@ -113,7 +123,7 @@ docker network inspect vlan30-net
 docker network inspect vlan40-net
 ```
 
-
+---
 
 ### 3. Launch Clients / コンテナ起動
 
@@ -138,12 +148,13 @@ docker run -dit --name clientH --network vlan50-net alpine sh
 ```
 - Alpine image is lightweight and sufficient for exercises / Alpine は軽量で演習に十分です
 
-
+---
 
 ### 4. Verify Connectivity / 接続確認
 
 
-#### Test host → container connectivity / ホスト→コンテナ接続確認
+#### Test connectivity for router (linux host)  → internal devices (container) / ルーター(ホスト) → 社内デバイス(コンテナ)の接続確認
+
 ```console
 ping -c 3 192.168.110.1
 ping -c 3 192.168.120.1
@@ -160,8 +171,11 @@ docker exec -it clientC ping 198.168.110.3
 ![screenshot](../../images/11_VLAN_ClientC_pingClientD.png)
 
 
-- ClientC (VLAN30) -> ClientE (VLAN40) is not successful, because ClientE is in different  VLAN / ClientC -> E は違うVLAN上で通信失敗
+#### Test container  (internal devices) -> container  (internal devices) in different VLAN / 違うVLANのコンテナへ通信
 ```console
+# ClientC (VLAN30) -> ClientE (VLAN40) is not successful, because ClientE is in different  VLAN
+# ClientC -> ClientDは違うVLANにいるので通信失敗
+
 docker exec -it clientC ping -c 3 192.168.120.2
  ```
 ![screenshot](../../images/11_VLAN_ClientC_pingClientE.png)
@@ -171,26 +185,29 @@ docker exec -it clientC ping -c 3 192.168.120.2
 ### Troubleshooting / トラブルシューティング
 - If ping didn't work / pingが上手くいかなかった場合
 
-- Confirm dockers containers are running / コンテナが起動しているか確認
+
 ```console
+# Confirm dockers containers are running / コンテナが起動しているか確認
 docker ps -a
 ```
 
-- Start dockers if they are exited / もしExitedしていたらコンテナを起動
 ```console
+# Start dockers if they are exited / もしExitedしていたらコンテナを起動
+
+# start a container / コンテナを個別に起動
 sudo docker start clientC
 
-# start all exited docker at once
+# start all exited containers at once / 停止中のすべてのコンテナを起動
 docker start $(docker ps -q -a -f status=exited)
 ```
 
-- Check if interfaces are up / インターフェースがアップしているか確認
 ```console
+# Check if interfaces are up / インターフェースがアップしているか確認
 ip link show
 ```
 
-- Confirm IP address assigned to container / コンテナに割り当てられたIPを確認
 ```console
+# Confirm IP address assigned to container / コンテナに割り当てられたIPを確認
 docker exec -it clientC ifconfig
 ```
 
