@@ -63,8 +63,9 @@ IT-Security-SystemAdmin-LAB_withScenarios
 │   │      ├─ nginx.conf
 │   │      └─ apache2.conf
 │   │
-│   ├─ 13_cloud/                         # AWSスキルビルダー参考   
-│   │      └─ AWS_Skill_Builder.md                # EC2, S3, VPC, AWS CLI
+│   ├─ 13_cloud/                         # Cloud構築・運用   
+│   │   ├─ 01_AWS_Skill_Builder.md                # AWS Skill Builder紹介 (EC2, S3, VPC, AWS CLI)
+│   │   └─ 02_terraform_samples.md                # Terraform設定ファイル例
 │   │
 │   └─14_software_management/            # SaaS・ソフトウェア管理        
 │       ├─ 01_db_postgres_basics.md               # PostgreSQL基礎・設定
