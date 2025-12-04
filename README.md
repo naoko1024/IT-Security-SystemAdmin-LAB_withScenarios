@@ -1,4 +1,4 @@
-# IT-Security-SystemAdmin-LAB.en
+# IT-Security-SystemAdmin-LAB_withScenarios
 
 ## About this Lab /  このラボについて
 
